@@ -93,3 +93,4 @@ C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\Microsoft.AI.Web.xml
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\obj\Debug\MovieRental.dll
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\obj\Debug\MovieRental.pdb
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\obj\Debug\MovieRental.Migrations.SeedUsers.resources
+C:\Users\Lukasz\source\repos\MovieRental\MovieRental\obj\Debug\MovieRental.csprojResolveAssemblyReference.cache
