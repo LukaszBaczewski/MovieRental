@@ -21,14 +21,14 @@ namespace MovieRental.Controllers.API
         }
 
         //GET api/movies
-        public IHttpActionResult GetMovies()
+        public IEnumerable<MovieDto> GetMovies()
         {
-            var movies = _context.Movies.Include(c => c.Genre);
-
-            var moviesDto = movies.ToList().Select(Mapper.Map<Movie, MovieDto>);
-
-            return Ok(moviesDto);
+            return _context.Movies
+                .Include(c => c.Genre)
+                .ToList()
+                .Select(Mapper.Map<Movie, MovieDto>);
         }
+
 
         // GET api/movies/1
         public IHttpActionResult GetMovie(int id)

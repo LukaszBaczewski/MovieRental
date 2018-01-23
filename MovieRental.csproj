@@ -211,6 +211,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="DTOS\CustomerDto.cs" />
+    <Compile Include="DTOS\GenreDto.cs" />
     <Compile Include="DTOS\MembershipTypeDto.cs" />
     <Compile Include="DTOS\MovieDto.cs" />
     <Compile Include="Global.asax.cs">
@@ -275,6 +276,10 @@
     <Compile Include="Migrations\201712101516256_AddDataAnnotationsToMovieClass.cs" />
     <Compile Include="Migrations\201712101516256_AddDataAnnotationsToMovieClass.Designer.cs">
       <DependentUpon>201712101516256_AddDataAnnotationsToMovieClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801211340125_SeedUsers.cs" />
+    <Compile Include="Migrations\201801211340125_SeedUsers.Designer.cs">
+      <DependentUpon>201801211340125_SeedUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -591,6 +596,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712101516256_AddDataAnnotationsToMovieClass.resx">
       <DependentUpon>201712101516256_AddDataAnnotationsToMovieClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801211340125_SeedUsers.resx">
+      <DependentUpon>201801211340125_SeedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

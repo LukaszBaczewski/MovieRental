@@ -14,18 +14,16 @@ namespace MovieRental.DTOS
         [StringLength(255)]
         public string Name { get; set; }
 
-        [Required]
-        public int? GenreId { get; set; }
+        public int GenreId { get; set; }
+
+        public GenreDto Genre { get; set; }
 
         public bool IsAvailable { get; set; }
 
-        [Required]
         public DateTime? ReleaseDate { get; set; }
 
         public DateTime? DateAdded { get; set; }
 
-        [Required]
-        [Range(1, 20)]
         public int NumberInStock { get; set; }
     }
 }
