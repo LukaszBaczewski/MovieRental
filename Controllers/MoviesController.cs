@@ -17,10 +17,19 @@ namespace MovieRental.Controllers
             _context = new ApplicationDbContext();
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         public ViewResult Index()
         {
-            var movies = _context.Movies.Include(c => c.Genre).ToList();     
-            return View(movies);
+            //var movies = _context.Movies.Include(c => c.Genre).ToList();   
+
+            if (User.IsInRole(RoleNames.CanManageMovies))
+                return View("List");
+
+            return View("ReadOnlyList");
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -50,6 +59,7 @@ namespace MovieRental.Controllers
             return RedirectToAction("Index", "Movies");
         }
 
+        [Authorize(Roles = RoleNames.CanManageMovies)]
         public ActionResult New()
         {
             var vm = new MovieFormViewModel
