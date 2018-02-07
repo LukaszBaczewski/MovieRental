@@ -13,6 +13,10 @@ C:\Users\Lukasz\source\repos\MovieRental\MovieRental\obj\Debug\MovieRental.Migra
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\obj\Debug\MovieRental.Migrations.AddNullToDateAdded.resources
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\obj\Debug\MovieRental.Migrations.AddDataAnnotationsToCustomer.resources
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\obj\Debug\MovieRental.Migrations.AddDataAnnotationsToMovieClass.resources
+C:\Users\Lukasz\source\repos\MovieRental\MovieRental\obj\Debug\MovieRental.Migrations.SeedUsers.resources
+C:\Users\Lukasz\source\repos\MovieRental\MovieRental\obj\Debug\MovieRental.Migrations.AddDrivingLicenseToApplicationUser.resources
+C:\Users\Lukasz\source\repos\MovieRental\MovieRental\obj\Debug\MovieRental.Migrations.AddPhoneNumber.resources
+C:\Users\Lukasz\source\repos\MovieRental\MovieRental\obj\Debug\MovieRental.Migrations.RemovePhoneFromAppUser.resources
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\obj\Debug\MovieRental.csproj.GenerateResource.Cache
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\obj\Debug\MovieRental.csproj.CoreCompileInputs.cache
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\ApplicationInsights.config
@@ -59,6 +63,9 @@ C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\System.Web.WebPages.Raz
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\WebGrease.dll
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\AutoMapper.xml
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\Microsoft.Owin.xml
+C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\Microsoft.Owin.Security.xml
+C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\Microsoft.Owin.Security.Facebook.xml
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\System.Net.Http.Formatting.xml
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\System.Web.Http.xml
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\System.Web.Http.WebHost.xml
@@ -76,10 +83,7 @@ C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\EntityFramework.SqlServ
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\Microsoft.AspNet.Identity.Core.xml
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\Microsoft.Owin.xml
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\Microsoft.Owin.Security.xml
-C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\Microsoft.Owin.Security.Facebook.xml
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\Microsoft.Owin.Security.Cookies.xml
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\Microsoft.Owin.Security.Google.xml
@@ -92,6 +96,3 @@ C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\Microsoft.AI.WindowsSer
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\Microsoft.AI.Web.xml
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\obj\Debug\MovieRental.dll
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\obj\Debug\MovieRental.pdb
-C:\Users\Lukasz\source\repos\MovieRental\MovieRental\obj\Debug\MovieRental.Migrations.SeedUsers.resources
-C:\Users\Lukasz\source\repos\MovieRental\MovieRental\obj\Debug\MovieRental.csprojResolveAssemblyReference.cache
-C:\Users\Lukasz\source\repos\MovieRental\MovieRental\obj\Debug\MovieRental.Migrations.AddDrivingLicenseToApplicationUser.resources

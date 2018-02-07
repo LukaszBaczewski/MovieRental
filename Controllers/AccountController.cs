@@ -10,6 +10,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MovieRental.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
+using MovieRental.ViewModels.AccountViewModels;
+using MovieRental.ViewModels;
 
 namespace MovieRental.Controllers
 {
@@ -155,7 +157,8 @@ namespace MovieRental.Controllers
                 var user = new ApplicationUser {
                     UserName = model.Email,
                     Email = model.Email,
-                    DrivingLicense = model.DrivingLicense
+                    DrivingLicense = model.DrivingLicense,
+                    PhoneNumber = model.Phone
                 };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
@@ -375,7 +378,8 @@ namespace MovieRental.Controllers
                 var user = new ApplicationUser {
                     UserName = model.Email,
                     Email = model.Email,
-                    DrivingLicense = model.DrivingLicense
+                    DrivingLicense = model.DrivingLicense,
+                    PhoneNumber = model.Phone
                 };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)

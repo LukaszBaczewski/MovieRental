@@ -33,6 +33,7 @@ namespace MovieRental.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleNames.CanManageMovies)]
         public ActionResult Save(Movie movie)
         {
             if (!ModelState.IsValid)
@@ -69,6 +70,7 @@ namespace MovieRental.Controllers
             return View("MovieForm", vm);
         }
 
+        [Authorize(Roles = RoleNames.CanManageMovies)]
         public ActionResult Edit(int id)
         {
             var movie = _context.Movies.SingleOrDefault(m => m.Id == id);
