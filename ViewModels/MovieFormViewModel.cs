@@ -22,6 +22,8 @@ namespace MovieRental.ViewModels
 
         public bool? IsAvailable { get; set; }
 
+        public int NumberAvailable { get; set; }
+
         [Display(Name = "Release Date")]
         [Required]
         public DateTime? ReleaseDate { get; set; }
@@ -50,6 +52,8 @@ namespace MovieRental.ViewModels
             ReleaseDate = movie.ReleaseDate;
             NumberInStock = movie.NumberInStock;
             GenreId = movie.GenreId;
+            NumberAvailable = movie.NumberInStock;
+            DateAdded = movie.DateAdded;
         }
     }
 }

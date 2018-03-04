@@ -46,7 +46,11 @@ namespace MovieRental.Controllers
                 return View("MovieForm", viewModel);
             }
             if (movie.Id == 0)
+            {
+                movie.DateAdded = System.DateTime.Now;
+                movie.NumberAvailable = movie.NumberInStock;
                 _context.Movies.Add(movie);
+            }
             else
             {
                 var movieInDb = _context.Movies.Single(c => c.Id == movie.Id);

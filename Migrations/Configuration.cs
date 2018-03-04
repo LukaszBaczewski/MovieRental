@@ -9,7 +9,7 @@ namespace MovieRental.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(MovieRental.Models.ApplicationDbContext context)

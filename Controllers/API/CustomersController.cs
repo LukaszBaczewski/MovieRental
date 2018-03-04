@@ -13,26 +13,33 @@ namespace MovieRental.Controllers.API
 {
     public class CustomersController : ApiController
     {
-        private ApplicationDbContext _contex;
+        private ApplicationDbContext _context;
 
         public CustomersController()
         {
-            _contex = new ApplicationDbContext();
+            _context = new ApplicationDbContext();
         }
 
         // Get api/customers
-        public IEnumerable<CustomerDto> GetCustomers()
+        public IHttpActionResult GetCustomers(string query = null)
         {
-            return _contex.Customers
-                .Include(c => c.MembershipType)
+            var customersQuery = _context.Customers
+                .Include(c => c.MembershipType);
+
+            if (!String.IsNullOrWhiteSpace(query))
+                customersQuery = customersQuery.Where(c => c.FirstName.Contains(query));
+
+            var customerDtos = customersQuery
                 .ToList()
                 .Select(Mapper.Map<Customer, CustomerDto>);
+
+            return Ok(customerDtos);
         }
 
         //Get api/customers/1
         public IHttpActionResult GetCustomer(int id)
         {
-            var customer = _contex.Customers.SingleOrDefault(c => c.Id == id);
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
 
             if (customer == null)
                 NotFound();
@@ -48,8 +55,8 @@ namespace MovieRental.Controllers.API
 
             var customer = Mapper.Map<CustomerDto, Customer>(customerDto);
 
-            _contex.Customers.Add(customer);
-            _contex.SaveChanges();
+            _context.Customers.Add(customer);
+            _context.SaveChanges();
 
             customerDto.Id = customer.Id;
 
@@ -62,14 +69,14 @@ namespace MovieRental.Controllers.API
         {
             if (!ModelState.IsValid)
                 return BadRequest();
-            var customerInDb = _contex.Customers.SingleOrDefault(c => c.Id == id);
+            var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == id);
 
             if (customerInDb == null)
                 return NotFound();
 
             Mapper.Map(customerDto, customerInDb);
 
-            _contex.SaveChanges();
+            _context.SaveChanges();
 
             return Ok();
         }
@@ -78,13 +85,13 @@ namespace MovieRental.Controllers.API
         [HttpDelete]
         public IHttpActionResult DeleteCustomer(int id)
         {
-            var customerInDb = _contex.Customers.SingleOrDefault(c => c.Id == id);
+            var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == id);
 
             if (customerInDb == null)
                 return NotFound();
 
-            _contex.Customers.Remove(customerInDb);
-            _contex.SaveChanges();
+            _context.Customers.Remove(customerInDb);
+            _context.SaveChanges();
 
             return Ok();
         }

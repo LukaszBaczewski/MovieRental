@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
 using System.Security.Claims;
@@ -11,6 +12,10 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using MovieRental.Models;
+using Twilio;
+using Twilio.Clients;
+using Twilio.Rest.Api.V2010.Account;
+using Twilio.Types;
 
 namespace MovieRental
 {
@@ -25,10 +30,16 @@ namespace MovieRental
 
     public class SmsService : IIdentityMessageService
     {
-        public Task SendAsync(IdentityMessage message)
-        {
-            // Plug in your SMS service here to send a text message.
-            return Task.FromResult(0);
+        public async Task SendAsync(IdentityMessage message)
+        { 
+            TwilioClient.Init(
+                ConfigurationManager.AppSettings["SMSAccountIdentification"],
+                ConfigurationManager.AppSettings["SMSAuthorizationToken"]);
+
+            var result = await MessageResource.CreateAsync(
+               to: message.Destination,                          
+               from: ConfigurationManager.AppSettings["SMSAccountFrom"],
+               body: message.Body);
         }
     }
 

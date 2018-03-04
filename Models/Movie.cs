@@ -17,8 +17,6 @@ namespace MovieRental.Models
 
         public Genre Genre { get; set; }
 
-        public bool IsAvailable { get; set; }
-
         [Display(Name = "Release Date")]
         [Required]
         public DateTime? ReleaseDate { get; set; }
@@ -29,5 +27,7 @@ namespace MovieRental.Models
         [Range(1, 20)]
         [Display(Name = "Number In Stock")]
         public int NumberInStock { get; set; }
+
+        public int NumberAvailable { get; set; }
     }
 }

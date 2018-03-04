@@ -8,6 +8,7 @@
 
 @using (Html.BeginForm("Save", "Movies"))
 {
+    
     <div class="form-group">
         @Html.LabelFor(m => m.Name)
         @Html.TextBoxFor(m => m.Name, new { @class = "form-control"})
@@ -28,14 +29,26 @@
         @Html.TextBoxFor(m => m.NumberInStock, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.NumberInStock)
     </div>
+
     @Html.HiddenFor(m => m.Id)
     @Html.AntiForgeryToken()
 
-    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="submit" class="btn btn-primary" id="newMovieBtn">Save</button>
 }
 
 @section scripts
 {
     @Scripts.Render("~/bundles/jqueryval")
+<script>
+
+    $(document).ready(function () {
+        toastr.info('Page Loaded!');
+        $("#newMovieBtn").click(function () {
+            toastr.success("Movie has been succesfully saved.");            
+        });
+            
+
+    });
+    </script>
 }
 
