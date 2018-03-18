@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
@@ -11,7 +12,10 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
+using MovieRental;
 using MovieRental.Models;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 using Twilio;
 using Twilio.Clients;
 using Twilio.Rest.Api.V2010.Account;
@@ -21,12 +25,46 @@ namespace MovieRental
 {
     public class EmailService : IIdentityMessageService
     {
-        public Task SendAsync(IdentityMessage message)
+        public async Task SendAsync(IdentityMessage message)
         {
-            // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+            await configSendGridasync(message);
+        }
+
+        private async Task configSendGridasync(IdentityMessage message)
+        {
+            var apiKey = Environment.GetEnvironmentVariable("SendGridAPI");
+            var client = new SendGridClient(apiKey);
+            var msg = new SendGridMessage()
+            {
+                From = new EmailAddress("hkjop@interia.pl", "MovieRental"),
+                Subject = message.Subject,
+                PlainTextContent = message.Body,
+                HtmlContent = message.Body
+            };
+            msg.AddTo(message.Destination);
+            var response = await client.SendEmailAsync(msg);
+
+
+
+            //var apiKey = Environment.GetEnvironmentVariable("SendGridAPI");
+            //var client = new SendGridClient(apiKey);
+            //var myMessage = new SendGridMessage();
+            //myMessage.AddTo(message.Destination);
+            //myMessage.From = new EmailAddress(
+            //                    "hkjop@interia.pl", "MovieRental");
+            //myMessage.Subject = message.Subject;
+            //myMessage.PlainTextContent = message.Body;
+            //myMessage.HtmlContent = message.Body;
+
+            //var msg = MailHelper.CreateSingleEmail(m);
+            //var response = await client.SendEmailAsync(msg);
+
+
+            await Task.FromResult(0);
+        }
         }
     }
+
 
     public class SmsService : IIdentityMessageService
     {
@@ -117,4 +155,4 @@ namespace MovieRental
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
         }
     }
-}
+
