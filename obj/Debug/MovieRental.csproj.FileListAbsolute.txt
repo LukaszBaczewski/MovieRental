@@ -117,3 +117,4 @@ C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\SendGrid.pdb
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\SendGrid.xml
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\System.IdentityModel.Tokens.Jwt.xml
 C:\Users\Lukasz\source\repos\MovieRental\MovieRental\bin\Twilio.xml
+C:\Users\Lukasz\source\repos\MovieRental\MovieRental\obj\Debug\MovieRental.Migrations.AddAgeRatingToMovies.resources

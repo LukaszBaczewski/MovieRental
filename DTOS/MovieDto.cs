@@ -27,5 +27,7 @@ namespace MovieRental.DTOS
         public int NumberInStock { get; set; }
 
         public int NumberAvailable { get; set; }
+
+        public int AgeRating { get; set; }
     }
 }

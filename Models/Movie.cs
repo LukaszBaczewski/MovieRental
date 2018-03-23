@@ -29,5 +29,10 @@ namespace MovieRental.Models
         public int NumberInStock { get; set; }
 
         public int NumberAvailable { get; set; }
+
+        [Required]
+        [Display(Name = "Age Rating")]
+        public int AgeRating { get; set; }
+
     }
 }

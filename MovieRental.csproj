@@ -348,6 +348,10 @@
     <Compile Include="Migrations\201802181021238_DeleteIsAvailable.Designer.cs">
       <DependentUpon>201802181021238_DeleteIsAvailable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803181511553_AddAgeRatingToMovies.cs" />
+    <Compile Include="Migrations\201803181511553_AddAgeRatingToMovies.Designer.cs">
+      <DependentUpon>201803181511553_AddAgeRatingToMovies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -722,6 +726,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802181021238_DeleteIsAvailable.resx">
       <DependentUpon>201802181021238_DeleteIsAvailable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803181511553_AddAgeRatingToMovies.resx">
+      <DependentUpon>201803181511553_AddAgeRatingToMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

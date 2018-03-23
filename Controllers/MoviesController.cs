@@ -58,6 +58,7 @@ namespace MovieRental.Controllers
                 movieInDb.ReleaseDate = movie.ReleaseDate;
                 movieInDb.GenreId = movie.GenreId;
                 movieInDb.NumberInStock = movie.NumberInStock;
+                movieInDb.AgeRating = movie.AgeRating;
             }
             _context.SaveChanges();
 

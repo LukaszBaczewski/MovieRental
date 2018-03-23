@@ -43,6 +43,10 @@ namespace MovieRental.ViewModels
             }
         }
 
+        [Required]
+        [Display(Name = "Age Rating")]
+        public int AgeRating { get; set; }
+
         public MovieFormViewModel() { Id = 0; }
 
         public MovieFormViewModel(Movie movie)
@@ -54,6 +58,7 @@ namespace MovieRental.ViewModels
             GenreId = movie.GenreId;
             NumberAvailable = movie.NumberInStock;
             DateAdded = movie.DateAdded;
+            AgeRating = movie.AgeRating;
         }
     }
 }
