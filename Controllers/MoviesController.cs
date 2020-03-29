@@ -23,9 +23,7 @@ namespace MovieRental.Controllers
         }
 
         public ViewResult Index()
-        {
-            //var movies = _context.Movies.Include(c => c.Genre).ToList();   
-
+        {  
             if (User.IsInRole(RoleNames.CanManageMovies))
                 return View("List");
 
