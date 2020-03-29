@@ -19,7 +19,7 @@ namespace MovieRental.Models
 
             var age = DateTime.Today.Year - customer.DateOfBirth.Value.Year;
 
-            return (age >= 18) ? ValidationResult.Success : new ValidationResult("Customer should be atleast 18 years old to go on a membership.");
+            return (age >= 18) ? ValidationResult.Success : new ValidationResult("Customer should be atleast 21 years old to go on a membership.");
         }
     }
 }
