@@ -44,22 +44,6 @@ namespace MovieRental
             msg.AddTo(message.Destination);
             var response = await client.SendEmailAsync(msg);
 
-
-
-            //var apiKey = Environment.GetEnvironmentVariable("SendGridAPI");
-            //var client = new SendGridClient(apiKey);
-            //var myMessage = new SendGridMessage();
-            //myMessage.AddTo(message.Destination);
-            //myMessage.From = new EmailAddress(
-            //                    "hkjop@interia.pl", "MovieRental");
-            //myMessage.Subject = message.Subject;
-            //myMessage.PlainTextContent = message.Body;
-            //myMessage.HtmlContent = message.Body;
-
-            //var msg = MailHelper.CreateSingleEmail(m);
-            //var response = await client.SendEmailAsync(msg);
-
-
             await Task.FromResult(0);
         }
         }

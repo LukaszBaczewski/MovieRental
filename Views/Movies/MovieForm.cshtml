@@ -8,7 +8,7 @@
 
 @using (Html.BeginForm("Save", "Movies"))
 {
-    
+  <form>
     <div class="form-group">
         @Html.LabelFor(m => m.Name)
         @Html.TextBoxFor(m => m.Name, new { @class = "form-control"})
@@ -34,6 +34,7 @@
         @Html.TextBoxFor(m => m.AgeRating, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.Name)
     </div>
+  </form>  
 
     @Html.HiddenFor(m => m.Id)
     @Html.AntiForgeryToken()
@@ -47,9 +48,38 @@
 <script>
 
     $(document).ready(function () {
-        toastr.info('Page Loaded!');
-        $("#newMovieBtn").click(function () {
-            toastr.success("Movie has been succesfully saved.");            
+        //toastr.info('Page Loaded!');
+        //$("#newMovieBtn").click(function () {
+        //    toastr.success("Movie has been succesfully saved.");            
+        //});
+
+
+
+
+        var validator = $("#newRental").validate({
+            submitHandler: function () {
+                $.ajax({
+                    url: "/api/newRentals",
+                    method: "post",
+                    data: vm
+                })
+                    .done(function () {
+                        toastr.success("Rental succesfully recorded.")
+
+                        $("#customer").typeahead("val", "");
+                        $("#movies").empty();
+                        $("#movie").typeahead("val", "");
+
+                        vm = { movieIds: [] };
+
+                        validator.resetForm();
+                    })
+                    .fail(function () {
+                        toastr.error("Something unexpected happened.")
+                    });
+
+                return false;
+            }
         });
             
 

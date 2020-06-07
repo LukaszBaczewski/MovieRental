@@ -32,11 +32,17 @@ namespace MovieRental.Controllers.API
             if (customer == null)
                 return BadRequest("CustomerId is not valid");
 
-            var movies = _context.Movies.Where(
-                m => newRental.MovieIds.Contains(m.Id)).ToList();
+            // filter out movies where the rating is above the customer's age
+            var age = DateTime.Today.Year - customer.DateOfBirth.Value.Year;
+
+            var movies = _context.Movies
+                .Where(
+                m => newRental.MovieIds.Contains(m.Id))
+                .Where(m => m.AgeRating <= age)
+                .ToList();
 
             if (movies.Count != newRental.MovieIds.Count)
-                return BadRequest("On or more MovieIds are invalid");
+                return BadRequest("One or more MovieIds are invalid");
 
             foreach (var movie in movies)
             {
